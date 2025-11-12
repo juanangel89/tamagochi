@@ -24,3 +24,44 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* 1. Definición del Keyframe: Oscila entre -30°, 0°, y +30° */
+@keyframes bamboleo {
+  0% {
+    transform: rotate(0deg); /* Inicio: 0 grados */
+  }
+  25% {
+    transform: rotate(20deg); /* Gira 30 grados a la derecha */
+  }
+  50% {
+    transform: rotate(0deg); /* Vuelve al centro */
+  }
+  75% {
+    transform: rotate(-20deg); /* Gira 30 grados a la izquierda */
+  }
+  100% {
+    transform: rotate(0deg); /* Vuelve al centro para repetir */
+  }
+}
+
+/* 2. Extensión de la utilidad en Tailwind */
+/* Esto permite usar clases como 'animate-bamboleo' en tus componentes */
+.animate-bamboleo {
+  animation: bamboleo 1s ease-in-out infinite; 
+  transform-origin: 50% 90%;
+}
+
+@keyframes respiracion {
+  0% {
+    transform: scale(100%);
+  }
+  50% {
+    transform: scale(105%); 
+  }
+
+}
+
+.animate-respiracion {
+  animation: respiracion  2s ease-in-out infinite; 
+  transform-origin: 50% 80%;
+}
